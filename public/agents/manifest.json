@@ -1,0 +1,19 @@
+{
+  "version": "1.0.0",
+  "rooms": [
+    {
+      "id": "agent-a-qwen",
+      "name": "千问助手",
+      "configPath": "/agents/agent-a-qwen/config.json",
+      "status": "idle",
+      "lastActiveAt": 0
+    },
+    {
+      "id": "agent-b-zhipu",
+      "name": "智谱 AI",
+      "configPath": "/agents/agent-b-zhipu/config.json",
+      "status": "idle",
+      "lastActiveAt": 0
+    }
+  ]
+}

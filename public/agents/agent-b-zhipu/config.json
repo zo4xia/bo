@@ -1,0 +1,36 @@
+{
+  "id": "agent-b-zhipu",
+  "name": "智谱 AI",
+  "model": {
+    "name": "glm-4",
+    "apiUrl": "https://open.bigmodel.cn/api/paas/v4",
+    "apiKeys": [
+      "apikey1.here",
+      "apikey2.here"
+    ],
+    "currentKeyIndex": 0,
+    "rotationMode": "random",
+    "maxRetries": 3,
+    "retryDelay": 1000,
+    "timeout": 30000,
+    "webhookUrl": "https://api.day.app/p2CPtgzAMNGQCqQYEz86AV"
+  },
+  "fingerprintId": "",
+  "steelSession": {
+    "blockAds": true,
+    "solveCaptcha": false,
+    "residentialIp": true,
+    "sessionTimeout": 900000
+  },
+  "puter": {
+    "enabled": true,
+    "workspace": "/workspaces/zhipu",
+    "virtualIp": ""
+  },
+  "cache": {
+    "ttl": 86400,
+    "storage": "dexie"
+  },
+  "createdAt": 1708569600000,
+  "updatedAt": 1708569600000
+}

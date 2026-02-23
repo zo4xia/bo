@@ -1,0 +1,142 @@
+{
+  "id": "agent-a-qwen",
+  "name": "千问助手",
+  "model": {
+    "name": "qwen-max",
+    "apiUrl": "https://dashscope.aliyuncs.com/api/v1",
+    "apiKeys": [
+      "sk-key1-here",
+      "sk-key2-here",
+      "sk-key3-here"
+    ],
+    "currentKeyIndex": 0,
+    "rotationMode": "random",
+    "maxRetries": 3,
+    "retryDelay": 1000,
+    "timeout": 30000,
+    "webhookUrl": "https://api.day.app/p2CPtgzAMNGQCqQYEz86AV",
+    "useCustomModel": false,
+    "customModelId": "gpt-4",
+    "customApiUrl": "https://api.openai.com/v1"
+  },
+  "fingerprintId": "",
+  "steelSession": {
+    "blockAds": true,
+    "solveCaptcha": false,
+    "residentialIp": true,
+    "sessionTimeout": 900000
+  },
+  "puter": {
+    "enabled": true,
+    "workspace": "/workspaces/qwen",
+    "virtualIp": ""
+  },
+  "cache": {
+    "ttl": 86400,
+    "storage": "dexie"
+  },
+  "instructions": {
+    "general": "请友好、专业地回答用户问题，保持简洁明了",
+    
+    "captcha": {
+      "enabled": true,
+      "action": "ask_user",
+      "message": "遇到验证码了，请您帮忙处理一下~ 🙏"
+    },
+    
+    "qrLogin": {
+      "enabled": true,
+      "sendToUser": true,
+      "timeout": 300,
+      "reminderInterval": 30
+    },
+    
+    "error": {
+      "retryOnFailure": true,
+      "maxRetries": 3,
+      "notifyUser": true
+    },
+    
+    "customTasks": [
+      {
+        "id": "task-001",
+        "name": "数据收集",
+        "trigger": "收集数据",
+        "action": "使用 Steel 浏览器访问指定网站并提取数据",
+        "priority": 8
+      },
+      {
+        "id": "task-002",
+        "name": "自动登录",
+        "trigger": "需要登录",
+        "action": "检查是否有保存的会话，没有则提示用户扫码",
+        "priority": 9
+      }
+    ]
+  },
+  
+  "mcpBrowserFallback": {
+    "enabled": true,
+    "mcpServerUrl": "http://localhost:3000/mcp",
+    "fallbackMode": "local",
+    "timeout": 30000,
+    "localBrowser": {
+      "type": "puppeteer",
+      "headless": true
+    }
+  },
+  
+  "availableTools": [
+    {
+      "id": "cookie-capture",
+      "name": "Cookie 捕获器",
+      "description": "从浏览器自动捕获登录 Cookie，无需重复授权",
+      "category": "browser",
+      "enabled": true,
+      "icon": "🍪"
+    },
+    {
+      "id": "credential-manager",
+      "name": "凭证管理器",
+      "description": "安全保存和读取 API Key、Token、Cookie 等敏感凭据",
+      "category": "credential",
+      "enabled": true,
+      "icon": "🔐"
+    },
+    {
+      "id": "api-key-rotation",
+      "name": "API Key 轮替",
+      "description": "自动轮换多个 API Key，提高成功率",
+      "category": "credential",
+      "enabled": true,
+      "icon": "🔄"
+    },
+    {
+      "id": "dexie-cache",
+      "name": "Dexie 缓存",
+      "description": "IndexedDB 本地缓存，24 小时对话记录",
+      "category": "data",
+      "enabled": true,
+      "icon": "💾"
+    },
+    {
+      "id": "file-system",
+      "name": "文件系统",
+      "description": "Agent 专属文件夹，物理隔离存储",
+      "category": "data",
+      "enabled": true,
+      "icon": "📁"
+    },
+    {
+      "id": "mcp-browser",
+      "name": "MCP 浏览器兜底",
+      "description": "当 Steel API 失败时，使用 MCP 协议调用本地浏览器",
+      "category": "browser",
+      "enabled": true,
+      "icon": "🌐"
+    }
+  ],
+  
+  "createdAt": 1708569600000,
+  "updatedAt": 1708569600000
+}
